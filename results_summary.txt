@@ -1,0 +1,58 @@
+Hypervolume (ref = chance 0.5,0.5), mean ± sd over independent optimizer runs
+method         n  HV_search(noisy)   HV_fresh(unseen seeds/orders)   HV_shifted-domain   transfer gap(fresh-shift)
+NSGA-II        6  0.1218±0.0048    0.1023±0.0082          0.0108±0.0037      0.0915
+Random         6  0.1079±0.0077    0.1031±0.0125          0.0078±0.0007      0.0953
+CMA-ES         6  0.1289±0.0079    0.1185±0.0143          0.0128±0.0036      0.1057
+TPE-MO         6  0.1271±0.0075    0.1147±0.0124          0.0104±0.0009      0.1042
+Hand-tuned     6  0.0987±0.0040    0.0954±0.0091          0.0075±0.0029      0.0879
+NSGA-II (G2)   4  0.1279±0.0105    0.1118±0.0117          0.0105±0.0035      0.1013
+
+NSGA-II vs baselines on held-out fresh HV (one-sided Mann-Whitney U, H1: NSGA-II > baseline)
+  vs Random     dHV=-0.0008  95%CI[-0.0118,+0.0104]  p=0.7576  d=-0.07
+  vs CMA-ES     dHV=-0.0162  95%CI[-0.0283,-0.0042]  p=0.9794  d=-1.39
+  vs TPE-MO     dHV=-0.0124  95%CI[-0.0237,-0.0018]  p=0.9340  d=-1.17
+  vs Hand-tuned dHV=+0.0069  95%CI[-0.0022,+0.0154]  p=0.1548  d=+0.80
+
+Continual-learning metrics of the 'balanced' solution (max f_pl+f_st on held-out seeds), mean over runs
+  NSGA-II     plasticity=0.830 stability=0.806
+  Random      plasticity=0.832 stability=0.805
+  CMA-ES      plasticity=0.841 stability=0.842
+  TPE-MO      plasticity=0.846 stability=0.823
+  Hand-tuned  plasticity=0.813 stability=0.804
+
+Gene importance (random-forest on all evaluated NSGA-II genomes; fANOVA proxy)
+  A_plus   0.175
+  eta      0.161
+  tau_th   0.147
+  gamma    0.134
+  w_inh    0.102
+  theta0   0.084
+  rho      0.060
+  meta     0.048
+  tau_m_   0.046
+  tau_p    0.043
+
+Fraction of final NSGA-II Pareto solutions with metaplasticity on (m>0): 0.74  (n=27)
+Fraction in random-search pool with m>0 (prior): 0.86
+Median evolved Pareto genome (log10 units for log genes):
+  A_plus   -2.11
+  rho      -0.25
+  tau_p    +1.19
+  tau_m_   +1.08
+  meta     -0.87
+  eta      -0.35
+  theta0   +2.67
+  w_inh    +0.15
+  gamma    -1.15
+  tau_th   +1.88
+corr(log rho, log meta) on evolved fronts = +0.35
+
+Ablation of best evolved genome (10 fresh seeds/orders):  plasticity, stability | ACC, BWT, Forgetting
+  full (G1)                    pl=0.819±0.025 st=0.798±0.025 | ACC=0.806 BWT=-0.017 F=0.027
+  no metaplasticity            pl=0.594±0.036 st=0.573±0.035 | ACC=0.575 BWT=-0.023 F=0.035
+  no homeostasis (gamma~0)     pl=0.810±0.036 st=0.804±0.032 | ACC=0.805 BWT=-0.006 F=0.019
+  STDP only                    pl=0.592±0.027 st=0.554±0.027 | ACC=0.562 BWT=-0.039 F=0.051
+  full, gate G2 (same genome)  pl=0.825±0.022 st=0.818±0.023 | ACC=0.821 BWT=-0.005 F=0.013
+  hand-tuned STDP              pl=0.765±0.024 st=0.740±0.038 | ACC=0.746 BWT=-0.024 F=0.042
+saturated-synapse fraction (W>0.9 w_max) of best genome: 0.000
+best genome: {'A_plus': 0.0047, 'rho': 4.8235, 'tau_p': 5.6231, 'tau_m_': 15.1082, 'meta': 10.2063, 'eta': 0.3152, 'theta0': 0.7966, 'w_inh': 0.3707, 'gamma': 0.0182, 'tau_th': 75.8185}

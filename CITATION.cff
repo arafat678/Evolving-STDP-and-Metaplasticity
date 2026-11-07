@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this research codebase or optimization algorithms in your research, please cite it as below."
+title: "Evolving STDP and Metaplasticity: Multi-Objective Evolutionary Optimization of Synaptic Plasticity for Continual Learning in Spiking Neural Networks"
+version: 1.0.0
+date-released: 2024-10-19
+authors:
+  - family-names: Mondal
+    given-names: Arafat Ali
+    affiliation: "Maulana Abul Kalam Azad University of Technology (MAKAUT), West Bengal, India"
+repository-code: "https://github.com/arafat678/Evolving-STDP-and-Metaplasticity"
+keywords:
+  - spiking-neural-networks
+  - stdp
+  - metaplasticity
+  - continual-learning
+  - catastrophic-forgetting
+  - nsga-ii
+  - evolutionary-algorithms
+  - neuromorphic-computing
+license: MIT
