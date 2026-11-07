@@ -15,7 +15,7 @@
 
 ---
 
-## 📌 Abstract & Research Overview
+## Abstract & Research Overview
 
 In biological nervous systems, continual learning without catastrophic forgetting is achieved through a multi-tier hierarchy of synaptic mechanisms, including **Spike-Timing-Dependent Plasticity (STDP)**, **metaplastic consolidation** (activity-dependent resistance to future changes), and **homeostatic membrane threshold adaptation**.
 
@@ -25,7 +25,7 @@ Evaluated across sequential task-incremental benchmarks (**Split-Digits**), the 
 
 ---
 
-## 🔬 Experimental Findings & Visual Gallery
+## Experimental Findings & Visual Gallery
 
 ### 1. Pareto Fronts on Held-Out Test Seeds (Plasticity vs. Stability)
 Comparison of non-dominated Pareto fronts across evolutionary optimizers evaluated on unseen task sequences and random seeds.
@@ -59,7 +59,7 @@ Random forest regression on all evaluated Pareto genomes identifies which hyperp
 
 ---
 
-## 📊 Quantitative Benchmark Results
+## Quantitative Benchmark Results
 
 ### 1. Multi-Objective Hypervolume Performance
 
@@ -86,7 +86,7 @@ Evaluated against chance reference $(0.5, 0.5)$ over independent optimizer runs:
 
 ---
 
-## 🧠 System Architecture & Computational Flow
+## System Architecture & Computational Flow
 
 ```mermaid
 flowchart TD
@@ -119,7 +119,7 @@ flowchart TD
 
 ---
 
-## 📐 Mathematical Formulation
+## Mathematical Formulation
 
 ### 1. Metaplasticity-Gated Synaptic Update (Gate G1)
 $$\Delta W_{ij}(t) = \frac{A_+ x_j^{\text{pre}}(t) S_i^{\text{post}}(t) - A_- x_i^{\text{post}}(t) S_j^{\text{pre}}(t)}{1 + m \cdot C_{ij}(t)}$$
@@ -134,7 +134,7 @@ $$\tau_{\text{th}} \frac{d\,\theta_i}{dt} = - (\theta_i - \theta_0) + \gamma S_i
 
 ---
 
-## 📂 Repository File Structure
+## Repository File Structure
 
 ```text
 Evolving-STDP-and-Metaplasticity/
@@ -162,7 +162,7 @@ Evolving-STDP-and-Metaplasticity/
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Installation
 ```bash
@@ -188,13 +188,13 @@ python analyze.py
 
 ---
 
-## 📖 Citation
+## Citation
 
 ```bibtex
 @misc{mondal2024evolvingstdp,
   author       = {Arafat Ali Mondal},
   title        = {Evolving STDP and Metaplasticity: Multi-Objective Evolutionary Optimization of Synaptic Plasticity for Continual Learning in Spiking Neural Networks},
-  year         = {2024},
+  year         = {2026},
   publisher    = {GitHub},
   journal      = {GitHub Repository},
   howpublished = {\url{https://github.com/arafat678/Evolving-STDP-and-Metaplasticity}}
@@ -203,5 +203,5 @@ python analyze.py
 
 ---
 
-## 📜 License
+##  License
 This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
